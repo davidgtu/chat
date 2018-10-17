@@ -1,9 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
 
 const Message = ({ message, author }) => (
-  <p>
+  <Text>
     <i>{author}</i>: {message}
-  </p>
+  </Text>
 );
 
 export default Message;
+
+const Text = styled.p`
+  padding: 5px;
+`;

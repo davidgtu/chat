@@ -21,6 +21,13 @@ code {
     monospace;
 }
 
+html,
+body,
 #root {
-  height: 100vh;
+  height: 100%;
+}
+
+ul,
+li {
+  list-style: none;
 }

@@ -1,15 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const MessageInput = (props) => {
+const MessageInput = ({ addMessage }) => {
   let input;
 
   return (
     <Container>
       <Input
+        autoFocus
         onKeyPress={(e) => {
-          if (e.key === 'Enter') {
-            props.addMessage(input.value, 'Me');
+          if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+
+            input.value.length !== 0 && addMessage(input.value, 'Me');
             input.value = '';
           }
         }}
@@ -23,12 +26,17 @@ const MessageInput = (props) => {
 export default MessageInput;
 
 const Container = styled.div`
-  position: fixed;
-  border: red 1px solid;
-  bottom: 0;
-  width: 100%;
+  /* margin: 10px; */
 `;
 
-const Input = styled.input`
-  width: 100%;
+const Input = styled.textarea`
+  background: #fff;
+  border-bottom: 3px solid #f4f4f4;
+  border-right: 3px solid #f4f4f4;
+  border-left: 3px solid #848484;
+  border-top: 3px solid #848484;
+  width: 98%;
+  height: 80px;
+  resize: none;
+  padding: 5px;
 `;
