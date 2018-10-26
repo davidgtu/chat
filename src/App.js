@@ -7,6 +7,7 @@ import { ChatHeader, Options } from './components';
 
 class App extends Component {
   render() {
+    const { username } = this.props;
     return (
       <Background>
         <Window>
@@ -22,7 +23,7 @@ class App extends Component {
               </SidebarContainer>
             </ContentContainer>
             <InputContainer>
-              <MessageInput />
+              <MessageInput username={username}/>
             </InputContainer>
           </Container>
         </Window>

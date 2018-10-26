@@ -24,11 +24,11 @@ const socket = setupSocket(store.dispatch, username, color);
 
 sagaMiddleware.run(handleNewMessage, { socket, username })
 
-store.dispatch(addUser('Me'))
+store.dispatch(addUser(username))
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <App username={username}/>
   </Provider>
 , document.getElementById('root'));
 

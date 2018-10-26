@@ -14,8 +14,6 @@ const setupSocket = (dispatch, username, color) => {
   
   socket.onmessage = (event) => {
     const data = JSON.parse(event.data)
-    console.log(data)
-    console.log(color)
     switch (data.type) {
       case Types.ADD_MESSAGE:
         dispatch(messageReceived(data.message, data.author, color))

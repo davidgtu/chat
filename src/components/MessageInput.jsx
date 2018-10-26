@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const MessageInput = ({ addMessage }) => {
+const MessageInput = ({ addMessage, username }) => {
   let input;
 
   return (
@@ -12,7 +12,7 @@ const MessageInput = ({ addMessage }) => {
           if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault();
 
-            input.value.length !== 0 && addMessage(input.value, 'Me');
+            input.value.length !== 0 && addMessage(input.value, username);
             input.value = '';
           }
         }}
