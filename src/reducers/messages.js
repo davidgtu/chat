@@ -8,7 +8,8 @@ const messages = (state = [], action) => {
         message: action.message,
         author: action.author,
         id: action.id,
-      }]
+        color: action.color,
+      }];
     
     default:
       return state;

@@ -7,6 +7,7 @@
     "chance": "^1.0.16",
     "normalize.css": "^8.0.0",
     "randanimal": "^1.0.4",
+    "randomcolor": "^0.5.3",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",

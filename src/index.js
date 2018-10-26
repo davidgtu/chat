@@ -1,3 +1,4 @@
+import randomColor from 'randomcolor';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -11,15 +12,17 @@ import setupSocket from './sockets';
 import handleNewMessage from './sagas';
 import username from './util/name';
 
+const color = randomColor()
+
 const sagaMiddleware = createSagaMiddleware();
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(reducer, composeEnhancers(applyMiddleware(sagaMiddleware)) );
 
-const socket = setupSocket(store.dispatch, username);
+const socket = setupSocket(store.dispatch, username, color);
 
-sagaMiddleware.run(handleNewMessage, { socket, username})
+sagaMiddleware.run(handleNewMessage, { socket, username })
 
 store.dispatch(addUser('Me'))
 

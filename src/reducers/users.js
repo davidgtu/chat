@@ -3,7 +3,7 @@ import * as Types from '../constants/ActionTypes';
 const users = (state = [], action) => {
   switch (action.type) {
     case Types.ADD_USER:
-      return [...state].filter((val,id,array) => array.indexOf(val) === id);
+      return [...state];
 
     case Types.USER_LIST:
       return action.users;
