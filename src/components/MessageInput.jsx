@@ -11,7 +11,6 @@ const MessageInput = ({ addMessage, username }) => {
         onKeyPress={(e) => {
           if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault();
-
             input.value.length !== 0 && addMessage(input.value, username);
             input.value = '';
           }

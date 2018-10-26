@@ -1,11 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Sidebar = ({ users }) => (
+const Sidebar = ({ users, username }) => (
   <Container>
     <ul>
       {users.map(user =>
-        <li key={user.id}>{user.name}</li>
+        <User
+          key={user.id}
+          isUser={username === user.name}
+        >
+          {user.name}
+        </User>
       )}
     </ul>
   </Container>
@@ -26,10 +31,10 @@ const Container = styled.aside`
   min-width: 250px;
   max-width: 250px;
   overflow-y: scroll;
-  
-  ul {
-    li {
-      padding: 5px;
-    }
-  }
+`;
+
+const User = styled.li`
+  color: ${({ isUser }) => isUser && 'red'};
+  font-weight: ${({ isUser }) => isUser && 600};
+  padding: 5px;
 `;

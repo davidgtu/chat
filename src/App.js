@@ -19,7 +19,7 @@ class App extends Component {
                 <MessageList />
               </MessageContainer>
               <SidebarContainer>
-                <Sidebar />
+                <Sidebar username={username}/>
               </SidebarContainer>
             </ContentContainer>
             <InputContainer>
@@ -51,6 +51,8 @@ const Window = styled.div`
   border-bottom: 1px solid #848484;
   max-width: 768px;
   margin: 0 auto;
+  position: relative;
+  top: 3%;
 `;
 
 const Container = styled.div`

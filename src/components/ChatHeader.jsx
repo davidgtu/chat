@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const ChatHeader = () => (
   <Container>
-    <p>Fuzz - Instant Message Chatroom</p>
+    <p>H8ters - Instant Message Chatroom</p>
     <HeaderButtons>
       <Button>_</Button>
       <Button>[  ]</Button>
